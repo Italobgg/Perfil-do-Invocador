@@ -1,21 +1,17 @@
-'use client';
+"use client";
 
-import { useState, FormEvent } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, FormEvent } from "react";
+import { useRouter } from "next/navigation";
 
-
-    /* Componente de Barra de Pesquisa. */
- 
+/* Componente de Barra de Pesquisa. */
 export default function SearchBar() {
-  const [summonerName, setSummonerName] = useState('');
+  const [summonerName, setSummonerName] = useState("");
   const router = useRouter(); // Hook para controlar a navegação
 
-    /* Lida com o envio do formulário.
-    Navega para a página dinâmica /summoner/[name] */
-
+  /* Lida com o envio do formulário.*/
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Impede o recarregamento padrão da página
-    
+
     // Remove espaços extras no início/fim e verifica se não está vazio
     const trimmedName = summonerName.trim();
     if (!trimmedName) {
@@ -23,7 +19,6 @@ export default function SearchBar() {
     }
 
     // Redireciona o usuário para a página de perfil
-    // ex: /summoner/Rito%20Pls (o navegador codifica o espaço)
     router.push(`/summoner/${trimmedName}`);
   };
 
