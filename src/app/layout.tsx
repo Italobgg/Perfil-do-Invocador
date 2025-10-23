@@ -1,4 +1,3 @@
-// src/app/layout.tsx
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -6,8 +5,8 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Summoner Insights',
-  description: 'Find summoner data and match history',
+  title: 'Perfil do Invocador',
+  description: 'Encontre dados de invocadores e histórico de partidas',
 }
 
 export default function RootLayout({
@@ -16,8 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    // Adicionando a classe 'dark' para forçar o tema escuro
-    <html lang="en" className="dark">
+    <html lang="pt-BR" className="dark">
       <body className={inter.className}>{children}</body>
     </html>
   )
